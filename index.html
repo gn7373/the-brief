@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Brief — IMC Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #F7F5F1;
+    --card: #FFFFFF;
+    --ink: #17151C;
+    --purple: #4E2A84;
+    --purple-deep: #34205C;
+    --wire: #8B7FB0;
+    --signal: #D4A32C;
+    --line: #DCD7CC;
+    --line-strong: #C7C0B2;
+    --radius: 2px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a{ color: inherit; }
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  :focus-visible{
+    outline: 2px solid var(--purple);
+    outline-offset: 2px;
+  }
+
+  /* ---------- TICKER ---------- */
+  .ticker-wrap{
+    background: var(--ink);
+    color: var(--paper);
+    overflow: hidden;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--purple);
+  }
+  .ticker{
+    display: inline-flex;
+    animation: scroll 34s linear infinite;
+    padding: 8px 0;
+  }
+  .ticker span{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 0 28px;
+    border-right: 1px solid rgba(247,245,241,0.25);
+  }
+  @keyframes scroll{
+    0%{ transform: translateX(0); }
+    100%{ transform: translateX(-50%); }
+  }
+
+  /* ---------- HEADER ---------- */
+  header.site{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 22px 5vw 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .wordmark{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: 26px;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .wordmark small{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--wire);
+    letter-spacing: 0.08em;
+  }
+  nav.site-nav{
+    display:flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  nav.site-nav a{
+    text-decoration:none;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+  }
+  nav.site-nav a:hover{ border-bottom-color: var(--purple); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 64px 5vw 40px;
+    max-width: 980px;
+  }
+  .hero .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--purple);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  h1{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 6.2vw, 74px);
+    line-height: 0.96;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+  h1 em{
+    font-style: normal;
+    color: var(--purple);
+  }
+  .hero p{
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 580px;
+    color: #3B3844;
+    margin: 0;
+  }
+  .hero .source-note{
+    margin-top: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: #9C9690;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- SEARCH + CONTROLS ---------- */
+  .controls{
+    padding: 8px 5vw 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .search-row{
+    display:flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .search-box{
+    flex: 1 1 280px;
+    display:flex;
+    align-items:center;
+    border: 1.5px solid var(--ink);
+    background: var(--card);
+    padding: 0 14px;
+    height: 44px;
+  }
+  .search-box input{
+    border:none;
+    outline:none;
+    background:transparent;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    width: 100%;
+    color: var(--ink);
+  }
+  .search-box input::placeholder{ color: #9C9690; }
+  .search-box svg{ flex-shrink:0; margin-right: 10px; opacity: 0.6; }
+
+  .loc-toggle{
+    display:flex;
+    border: 1.5px solid var(--ink);
+    height: 44px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  .loc-toggle button{
+    background: var(--card);
+    border: none;
+    padding: 0 16px;
+    cursor: pointer;
+    color: var(--ink);
+    border-right: 1.5px solid var(--ink);
+    font-family: inherit;
+    font-size: inherit;
+    white-space: nowrap;
+  }
+  .loc-toggle button:last-child{ border-right: none; }
+  .loc-toggle button.active{
+    background: var(--purple);
+    color: var(--paper);
+  }
+
+  .free-toggle{
+    display:flex;
+    align-items:center;
+    gap: 8px;
+    border: 1.5px solid var(--ink);
+    height: 44px;
+    padding: 0 14px;
+    background: var(--card);
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    user-select: none;
+    white-space: nowrap;
+  }
+  .free-toggle input{ accent-color: var(--purple); width: 15px; height: 15px; cursor:pointer; }
+  .free-toggle.active{ background: var(--signal); border-color: var(--signal); color: var(--ink); }
+
+  .chip-row{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .chip-row .label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    color: #9C9690;
+    align-self:center;
+    margin-right: 4px;
+    text-transform: uppercase;
+    width: 68px;
+    flex-shrink: 0;
+  }
+  .chip{
+    border: 1px solid var(--line-strong);
+    background: var(--card);
+    color: var(--ink);
+    padding: 7px 13px;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: border-color .12s, background .12s, color .12s;
+  }
+  .chip:hover{ border-color: var(--purple); }
+  .chip.active{
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+  .chip.level-chip.active{
+    background: var(--purple);
+    border-color: var(--purple);
+  }
+
+  .result-line{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-top: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #6b665f;
+  }
+  .result-line button{
+    background:none;
+    border: none;
+    color: var(--purple);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: underline;
+    padding: 0;
+  }
+
+  /* ---------- GRID ---------- */
+  .grid{
+    padding: 32px 5vw 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  @media (max-width: 980px){ .grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 660px){ .grid{ grid-template-columns: 1fr; padding: 28px 6vw 64px; } }
+
+  .stub{
+    background: var(--card);
+    border: 1px solid var(--line-strong);
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    position: relative;
+    transition: transform .14s ease, box-shadow .14s ease;
+  }
+  .stub:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px rgba(23,21,28,0.35);
+  }
+
+  .stub-date{
+    background: var(--purple);
+    color: var(--paper);
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    padding: 14px 4px;
+    position: relative;
+  }
+  .stub-date.level-yp{ background: var(--wire); color: var(--ink); }
+  .stub-date .month{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .stub-date .day{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1;
+    margin: 2px 0;
+  }
+  .stub-date .kind{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    text-align:center;
+    text-transform: uppercase;
+    opacity: 0.85;
+    line-height: 1.3;
+  }
+
+  /* perforation */
+  .stub-date::after{
+    content:"";
+    position:absolute;
+    right: -1px;
+    top:0; bottom:0;
+    width:0;
+    border-right: 2px dashed rgba(23,21,28,0.18);
+  }
+  .stub-date::before{
+    content:"";
+    position:absolute;
+    right: -7px;
+    top: -7px;
+    width: 14px; height: 14px;
+    background: var(--paper);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .stub-notch-bottom{
+    position:absolute;
+    right: -7px;
+    bottom: -7px;
+    width: 14px; height: 14px;
+    background: var(--paper);
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  .stub-body{
+    padding: 16px 16px 14px;
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .stub-top{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .stub-title{
+    font-weight: 700;
+    font-size: 15.5px;
+    line-height: 1.28;
+  }
+  .badge-col{
+    display:flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+  .price-badge{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    white-space: nowrap;
+    border-radius: 999px;
+  }
+  .price-badge.free{ background: var(--signal); color: var(--ink); }
+  .price-badge.paid{ background: var(--paper); color: #6b665f; border: 1px solid var(--line-strong); }
+
+  .level-badge{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    font-weight: 500;
+    padding: 3px 8px;
+    white-space: nowrap;
+    border-radius: 999px;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+  }
+  .level-badge.yp{ border-color: var(--wire); color: var(--wire); }
+  .level-badge.all{ border-color: var(--line-strong); color: #6b665f; }
+
+  .stub-host{
+    font-size: 12.5px;
+    color: #6b665f;
+  }
+  .stub-meta{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #6b665f;
+    display:flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 2px;
+  }
+  .stub-meta span{ display:flex; gap: 6px; align-items:center; }
+
+  .stub-tags{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .tag{
+    font-size: 10.5px;
+    padding: 3px 8px;
+    border: 1px solid var(--line-strong);
+    color: #6b665f;
+    border-radius: 999px;
+  }
+
+  .stub-footer{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line);
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+  }
+  .rsvp{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    text-decoration:none;
+    color: var(--purple);
+    letter-spacing: 0.03em;
+  }
+  .rsvp:hover{ text-decoration: underline; }
+  .stub-loc-pill{
+    font-size: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #9C9690;
+  }
+
+  .empty-state{
+    grid-column: 1 / -1;
+    text-align:center;
+    padding: 70px 20px;
+    color: #6b665f;
+  }
+  .empty-state .big{
+    font-family: 'Big Shoulders Display', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .empty-state button{
+    margin-top: 16px;
+    background: var(--purple);
+    color: var(--paper);
+    border:none;
+    padding: 10px 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    cursor:pointer;
+  }
+
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 30px 5vw 40px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #9C9690;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  footer a{ color: var(--purple); text-decoration:none; }
+  footer a:hover{ text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker">
+    <span>12 EVENTS TRACKED · SOURCE: NORTHWESTERN ONLY</span>
+    <span>7 TAGGED EARLY TALENT</span>
+    <span>5 IN EVANSTON · 7 AT NU CHICAGO CAMPUS</span>
+    <span>NEXT UP: L'ORÉAL EARLY TALENT INFO SESSION — JUL 23</span>
+    <span>SUBMIT AN EVENT →</span>
+    <span>12 EVENTS TRACKED · SOURCE: NORTHWESTERN ONLY</span>
+    <span>7 TAGGED EARLY TALENT</span>
+    <span>5 IN EVANSTON · 7 AT NU CHICAGO CAMPUS</span>
+    <span>NEXT UP: L'ORÉAL EARLY TALENT INFO SESSION — JUL 23</span>
+    <span>SUBMIT AN EVENT →</span>
+  </div>
+</div>
+
+<header class="site">
+  <a href="#" class="wordmark">THE BRIEF <small>IMC · NORTHWESTERN</small></a>
+  <nav class="site-nav">
+    <a href="#grid">Events</a>
+    <a href="#" onclick="alert('This would open a submission form.'); return false;">Submit an event</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">Evanston + NU Chicago campus · Updated weekly</div>
+  <h1>Every event worth <em>a business card.</em></h1>
+  <p>Recruiting sessions, career treks, and panels hosted through Northwestern — sorted so you can tell an early-talent info session from a mid-career mixer before you show up.</p>
+  <div class="source-note">Phase 1: sourced only from Northwestern's own event listings (Career Center, IMC, Kellogg, Medill). Chicago industry orgs and employer sources come later.</div>
+</section>
+
+<section class="controls">
+  <div class="search-row">
+    <div class="search-box">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search events, hosts, or tags…">
+    </div>
+    <div class="loc-toggle" id="locToggle">
+      <button data-loc="All" class="active">All</button>
+      <button data-loc="Evanston">Evanston</button>
+      <button data-loc="Chicago">Chicago Campus</button>
+      <button data-loc="Online">Virtual</button>
+    </div>
+    <label class="free-toggle" id="freeToggle">
+      <input type="checkbox" id="freeCheckbox">
+      Free only
+    </label>
+  </div>
+
+  <div class="chip-row" id="levelRow">
+    <span class="label">Level</span>
+  </div>
+  <div class="chip-row" id="sectorRow">
+    <span class="label">Format</span>
+  </div>
+  <div class="chip-row" id="industryRow">
+    <span class="label">Industry</span>
+  </div>
+
+  <div class="result-line">
+    <span id="resultCount">12 events</span>
+    <button id="clearFilters">Clear all filters</button>
+  </div>
+</section>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  <span>THE BRIEF — built by IMC students, for IMC students.</span>
+  <span><a href="#" onclick="alert('This would open a submission form.'); return false;">Know an event we're missing? Submit it.</a></span>
+</footer>
+
+<script>
+// Used only if events.json can't be loaded (e.g. testing without a local server).
+const SAMPLE_EVENTS = [
+  {title:"L'Oréal Early Talent Info Session", host:"Northwestern Career Center", sector:"Speaker Series", industry:"Brand & CPG", level:"Early Talent", loc:"Evanston", venue:"Kellogg Global Hub", date:"2026-07-23", month:"JUL", day:"23", time:"5:00 PM", free:true, tags:["beauty","info session"]},
+  {title:"Estée Lauder Companies: Breaking Into Beauty Marketing", host:"Medill Career Services", sector:"Speaker Series", industry:"Brand & CPG", level:"Early Talent", loc:"Chicago", venue:"Wieboldt Hall", date:"2026-07-28", month:"JUL", day:"28", time:"4:00 PM", free:true, tags:["beauty","panel"]},
+  {title:"Unilever Marketing Development Program Info Session", host:"Northwestern Career Center", sector:"Speaker Series", industry:"Brand & CPG", level:"Early Talent", loc:"Evanston", venue:"Kellogg Global Hub", date:"2026-08-03", month:"AUG", day:"03", time:"5:30 PM", free:true, tags:["CPG","rotational program"]},
+  {title:"IMC Career Trek: CPG & Beauty Marketing", host:"IMC Program", sector:"Career Fair", industry:"Brand & CPG", level:"Early Talent", loc:"Chicago", venue:"Multiple company HQs", date:"2026-08-07", month:"AUG", day:"07", time:"9:00 AM", free:true, tags:["site visit","RSVP required"]},
+  {title:"Kellogg Marketing Club x IMC Mixer", host:"Kellogg Marketing Club", sector:"Networking", industry:"Advertising", level:"All Levels", loc:"Evanston", venue:"James L. Allen Center", date:"2026-08-11", month:"AUG", day:"11", time:"6:00 PM", free:true, tags:["mixer","cross-program"]},
+  {title:"Medill Alumni in Advertising Panel", host:"Medill Alumni Relations", sector:"Speaker Series", industry:"Advertising", level:"Young Professional", loc:"Chicago", venue:"Wieboldt Hall", date:"2026-08-13", month:"AUG", day:"13", time:"5:00 PM", free:true, tags:["alumni panel"]},
+  {title:"IMC Employer Spotlight: Brand Management", host:"IMC Program", sector:"Speaker Series", industry:"Brand & CPG", level:"Early Talent", loc:"Chicago", venue:"Wieboldt Hall", date:"2026-08-18", month:"AUG", day:"18", time:"4:30 PM", free:true, tags:["employer spotlight"]},
+  {title:"IMC Fall Trade Show: Agency Preview", host:"IMC Program", sector:"Trade Show", industry:"Advertising", level:"Early Talent", loc:"Evanston", venue:"Norris University Center", date:"2026-08-22", month:"AUG", day:"22", time:"11:00 AM", free:true, tags:["recruiting"]},
+  {title:"Retail Media Panel", host:"Spiegel Research Center", sector:"Speaker Series", industry:"Retail", level:"All Levels", loc:"Evanston", venue:"Kellogg Global Hub", date:"2026-08-27", month:"AUG", day:"27", time:"4:00 PM", free:true, tags:["research","panel"]},
+  {title:"Kellogg x Medill Brand Leadership Panel", host:"Kellogg x Medill", sector:"Panel", industry:"Brand & CPG", level:"All Levels", loc:"Evanston", venue:"Wieboldt Hall", date:"2026-09-01", month:"SEP", day:"01", time:"6:00 PM", free:true, tags:["leadership"]},
+  {title:"Northwestern Young Alumni in Marketing Mixer", host:"Northwestern Alumni Relations", sector:"Networking", industry:"Media", level:"Young Professional", loc:"Chicago", venue:"Northwestern Chicago Campus", date:"2026-09-10", month:"SEP", day:"10", time:"6:30 PM", free:true, tags:["alumni","mixer"]},
+  {title:"Career Fair: Marketing & Comms Track", host:"Northwestern Career Center", sector:"Career Fair", industry:"Advertising", level:"Early Talent", loc:"Evanston", venue:"Norris University Center", date:"2026-09-15", month:"SEP", day:"15", time:"10:00 AM", free:true, tags:["recruiting"]}
+];
+
+let events = [];
+
+const levels = ["Early Talent","Young Professional","All Levels"];
+const sectors = ["Networking","Trade Show","Speaker Series","Workshop","Career Fair","Panel"];
+const industries = ["Advertising","Brand & CPG","Media","PR & Comms","Retail","Tech","Research/Analytics"];
+
+let state = { loc: "All", free: false, sector: null, industry: null, level: null, q: "" };
+
+function levelClass(level){
+  if(level === "Early Talent") return "";
+  if(level === "Young Professional") return "yp";
+  return "all";
+}
+
+function buildChips(){
+  const lRow = document.getElementById('levelRow');
+  levels.forEach(l=>{
+    const c = document.createElement('button');
+    c.className = 'chip level-chip';
+    c.textContent = l;
+    c.onclick = ()=>{
+      state.level = state.level === l ? null : l;
+      render(); buildChips();
+    };
+    if(state.level === l) c.classList.add('active');
+    lRow.appendChild(c);
+  });
+  const sRow = document.getElementById('sectorRow');
+  sectors.forEach(s=>{
+    const c = document.createElement('button');
+    c.className = 'chip';
+    c.textContent = s;
+    c.onclick = ()=>{
+      state.sector = state.sector === s ? null : s;
+      render(); buildChips();
+    };
+    if(state.sector === s) c.classList.add('active');
+    sRow.appendChild(c);
+  });
+  const iRow = document.getElementById('industryRow');
+  industries.forEach(i=>{
+    const c = document.createElement('button');
+    c.className = 'chip';
+    c.textContent = i;
+    c.onclick = ()=>{
+      state.industry = state.industry === i ? null : i;
+      render(); buildChips();
+    };
+    if(state.industry === i) c.classList.add('active');
+    iRow.appendChild(c);
+  });
+}
+
+function matches(ev){
+  if(state.loc !== "All" && ev.loc !== state.loc) return false;
+  if(state.free && !ev.free) return false;
+  if(state.sector && ev.sector !== state.sector) return false;
+  if(state.industry && ev.industry !== state.industry) return false;
+  if(state.level && ev.level !== state.level) return false;
+  if(state.q){
+    const hay = (ev.title+" "+ev.host+" "+ev.tags.join(" ")).toLowerCase();
+    if(!hay.includes(state.q.toLowerCase())) return false;
+  }
+  return true;
+}
+
+function render(){
+  const grid = document.getElementById('grid');
+  const filtered = events.filter(matches);
+  document.getElementById('resultCount').textContent = filtered.length + (filtered.length === 1 ? ' event' : ' events');
+  grid.innerHTML = '';
+
+  if(filtered.length === 0){
+    grid.innerHTML = `<div class="empty-state">
+      <div class="big">Nothing on the docket.</div>
+      <div>No events match those filters yet.</div>
+      <button onclick="clearAll()">Clear all filters</button>
+    </div>`;
+    return;
+  }
+
+  filtered.forEach(ev=>{
+    const card = document.createElement('div');
+    card.className = 'stub';
+    const lc = levelClass(ev.level);
+    card.innerHTML = `
+      <div class="stub-date ${lc === 'yp' ? 'level-yp' : ''}">
+        <div class="month">${ev.month}</div>
+        <div class="day">${ev.day}</div>
+        <div class="kind">${ev.sector}</div>
+        <div class="stub-notch-bottom"></div>
+      </div>
+      <div class="stub-body">
+        <div class="stub-top">
+          <div class="stub-title">${ev.title}</div>
+          <div class="badge-col">
+            <div class="price-badge ${ev.free ? 'free' : 'paid'}">${ev.free ? 'FREE' : ev.price}</div>
+            <div class="level-badge ${lc}">${ev.level}</div>
+          </div>
+        </div>
+        <div class="stub-host">${ev.host}</div>
+        <div class="stub-meta">
+          <span>⏱ ${ev.time}</span>
+          <span>📍 ${ev.venue}</span>
+        </div>
+        <div class="stub-tags">${ev.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <div class="stub-footer">
+          ${ev.source_url ? `<a href="${ev.source_url}" class="rsvp" target="_blank" rel="noopener">Details →</a>` : `${ev.source_url ? `<a href="${ev.source_url}" class="rsvp" target="_blank" rel="noopener">Details →</a>` : `<a href="#" class="rsvp" onclick="return false;">RSVP →</a>`}`}
+          <span class="stub-loc-pill">${ev.loc.toUpperCase()}</span>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function clearAll(){
+  state = { loc: "All", free: false, sector: null, industry: null, level: null, q: "" };
+  document.getElementById('searchInput').value = "";
+  document.getElementById('freeCheckbox').checked = false;
+  document.getElementById('freeToggle').classList.remove('active');
+  document.querySelectorAll('#locToggle button').forEach(b=>b.classList.toggle('active', b.dataset.loc === 'All'));
+  render(); refreshChipsAfterClear();
+}
+
+function refreshChipsAfterClear(){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+}
+
+document.getElementById('searchInput').addEventListener('input', (e)=>{
+  state.q = e.target.value;
+  render();
+});
+
+document.getElementById('locToggle').addEventListener('click', (e)=>{
+  if(e.target.tagName !== 'BUTTON') return;
+  state.loc = e.target.dataset.loc;
+  document.querySelectorAll('#locToggle button').forEach(b=>b.classList.remove('active'));
+  e.target.classList.add('active');
+  render();
+});
+
+document.getElementById('freeToggle').addEventListener('click', ()=>{
+  const box = document.getElementById('freeCheckbox');
+  box.checked = !box.checked;
+  state.free = box.checked;
+  document.getElementById('freeToggle').classList.toggle('active', state.free);
+  render();
+});
+
+document.getElementById('clearFilters').addEventListener('click', clearAll);
+function buildTicker(){
+  const total = events.length;
+  const freeCount = events.filter(e => e.free).length;
+  const evanston = events.filter(e => e.loc === "Evanston").length;
+  const chicago = events.filter(e => e.loc === "Chicago").length;
+  const online = events.filter(e => e.loc === "Online").length;
+  const earlyTalent = events.filter(e => e.level === "Early Talent").length;
+  const upcoming = [...events].sort((a,b) => a.date.localeCompare(b.date))[0];
+  const parts = [
+    `${total} EVENT${total === 1 ? '' : 'S'} TRACKED`,
+    `${freeCount} FREE`,
+    `${evanston} EVANSTON · ${chicago} CHICAGO CAMPUS${online ? ' · ' + online + ' VIRTUAL' : ''}`,
+    `${earlyTalent} TAGGED EARLY TALENT`,
+  ];
+  if(upcoming){
+    parts.push(`NEXT UP: ${upcoming.title.toUpperCase()} — ${upcoming.month} ${upcoming.day}`);
+  }
+  parts.push('SUBMIT AN EVENT →');
+  const ticker = document.getElementById('ticker');
+  const html = parts.map(p => `<span>${p}</span>`).join('') + parts.map(p => `<span>${p}</span>`).join('');
+  ticker.innerHTML = html;
+}
+buildTicker();
+document.querySelector('.source-note')?.remove();
+async function loadEvents(){
+  try{
+    const res = await fetch('events.json', { cache: 'no-store' });
+    if(!res.ok) throw new Error('events.json not found');
+    events = await res.json();
+    if(!Array.isArray(events) || events.length === 0) throw new Error('empty events.json');
+  }catch(err){
+    console.warn('Falling back to sample events —', err.message);
+    events = SAMPLE_EVENTS;
+  }
+  buildChips();
+  render();
+}
+
+loadEvents();
+</script>
+
+</body>
+</html>
