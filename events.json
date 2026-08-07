@@ -1,5 +1,24 @@
 [
   {
+    "title": "NCA: Georgetown Law School Info Session (Virtual)",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-06",
+    "month": "OCT",
+    "day": "06",
+    "time": "12:30 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1981210"
+  },
+  {
     "title": "International Student Professional Resource Fair",
     "host": "Northwestern Career Advancement",
     "sector": "Career Fair",
