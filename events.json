@@ -1,5 +1,24 @@
 [
   {
+    "title": "NCA Career Catch-Up: Understanding Your Skills",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-26",
+    "month": "OCT",
+    "day": "26",
+    "time": "6:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999547"
+  },
+  {
     "title": "NCA: UCLA, Cornell, UTexas, BU and George Washington Law School Panel & Info Session",
     "host": "Northwestern Career Advancement",
     "sector": "Panel",
@@ -17,6 +36,82 @@
       "Student"
     ],
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1981221"
+  },
+  {
+    "title": "NCA: Columbia Law School Information Session",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "Norris University Center, Rock Room",
+    "date": "2026-10-22",
+    "month": "OCT",
+    "day": "22",
+    "time": "5:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1984791"
+  },
+  {
+    "title": "NCA: NU Pritzker, Duke, USC, Vandy, UIUC & Ohio St. Law School Panel & Info Session",
+    "host": "Northwestern Career Advancement",
+    "sector": "Panel",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "Norris University Center, Arch Room",
+    "date": "2026-10-20",
+    "month": "OCT",
+    "day": "20",
+    "time": "5:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1991718"
+  },
+  {
+    "title": "NCA Career Catch-Up: Interview Prep",
+    "host": "Northwestern Career Advancement",
+    "sector": "Workshop",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-19",
+    "month": "OCT",
+    "day": "19",
+    "time": "6:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999536"
+  },
+  {
+    "title": "NCA: Harvard Law School Information Session for Northwestern & UChicago (Virtual)",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-19",
+    "month": "OCT",
+    "day": "19",
+    "time": "12:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1988245"
   },
   {
     "title": "NCA: University of Chicago Law School Info Session",
@@ -38,6 +133,44 @@
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1981217"
   },
   {
+    "title": "NCA Career Catch-Up: Effective Networking",
+    "host": "Northwestern Career Advancement",
+    "sector": "Networking",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-12",
+    "month": "OCT",
+    "day": "12",
+    "time": "6:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999524"
+  },
+  {
+    "title": "NCA: University of Michigan Law School Informatiom Session W/ UChicago",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-12",
+    "month": "OCT",
+    "day": "12",
+    "time": "5:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2004487"
+  },
+  {
     "title": "NCA: Georgetown Law School Info Session (Virtual)",
     "host": "Northwestern Career Advancement",
     "sector": "Speaker Series",
@@ -57,6 +190,101 @@
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1981210"
   },
   {
+    "title": "NCA Career Catch-Up: Internship/Job Search Resources",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-05",
+    "month": "OCT",
+    "day": "05",
+    "time": "6:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999495"
+  },
+  {
+    "title": "NCA: NYU Law School Information Session",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "Norris University Center, Big Ten Room",
+    "date": "2026-10-02",
+    "month": "OCT",
+    "day": "02",
+    "time": "12:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2000307"
+  },
+  {
+    "title": "NCA Career Catch-Up: Understanding Recruitment Timelines",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-09-28",
+    "month": "SEP",
+    "day": "28",
+    "time": "6:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999482"
+  },
+  {
+    "title": "NCA: Get Hired: Career Fair Prep",
+    "host": "Northwestern Career Advancement",
+    "sector": "Career Fair",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "Norris University Center, Evans Room",
+    "date": "2026-09-28",
+    "month": "SEP",
+    "day": "28",
+    "time": "4:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2001795"
+  },
+  {
+    "title": "NCA: Get Hired: Career Fair Prep",
+    "host": "Northwestern Career Advancement",
+    "sector": "Career Fair",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-09-28",
+    "month": "SEP",
+    "day": "28",
+    "time": "12:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2001763"
+  },
+  {
     "title": "International Student Professional Resource Fair",
     "host": "Northwestern Career Advancement",
     "sector": "Career Fair",
@@ -74,6 +302,25 @@
       "Student"
     ],
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1981885"
+  },
+  {
+    "title": "NCA: International Student - Career Fair and Recruitment Preparation",
+    "host": "Northwestern Career Advancement",
+    "sector": "Career Fair",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-09-22",
+    "month": "SEP",
+    "day": "22",
+    "time": "6:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2003464"
   },
   {
     "title": "NCA + FWS: Student Employment Job Fair 2026",
@@ -131,6 +378,25 @@
       "Student"
     ],
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1982805"
+  },
+  {
+    "title": "How AI is Impacting Early Career Recruiting",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Young Professional",
+    "loc": "Evanston",
+    "venue": "Norris University Center, Evans Room",
+    "date": "2026-09-08",
+    "month": "SEP",
+    "day": "08",
+    "time": "12:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Faculty/Staff"
+    ],
+    "source_url": "https://planitpurple.northwestern.edu/event/645415"
   },
   {
     "title": "NCA: Get Hired: Virtual Career Fair Prep",
