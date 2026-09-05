@@ -5,6 +5,25 @@
     "sector": "Speaker Series",
     "industry": "Advertising",
     "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "620 Lincoln Street, Garden level",
+    "date": "2026-10-30",
+    "month": "OCT",
+    "day": "30",
+    "time": "4:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999544"
+  },
+  {
+    "title": "NCA Career Catch-Up: Understanding Your Skills",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
     "loc": "Online",
     "venue": "Online",
     "date": "2026-10-26",
@@ -36,6 +55,25 @@
       "Student"
     ],
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1981221"
+  },
+  {
+    "title": "NCA Career Catch-Up: Interview Prep",
+    "host": "Northwestern Career Advancement",
+    "sector": "Workshop",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "620 Lincoln Street, Garden level",
+    "date": "2026-10-23",
+    "month": "OCT",
+    "day": "23",
+    "time": "4:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999532"
   },
   {
     "title": "NCA: Columbia Law School Information Session",
@@ -114,6 +152,25 @@
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1988245"
   },
   {
+    "title": "NCA Career Catch-Up: Effective Networking",
+    "host": "Northwestern Career Advancement",
+    "sector": "Networking",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "620 Lincoln Street, Garden level",
+    "date": "2026-10-16",
+    "month": "OCT",
+    "day": "16",
+    "time": "4:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999521"
+  },
+  {
     "title": "NCA: University of Chicago Law School Info Session",
     "host": "Northwestern Career Advancement",
     "sector": "Speaker Series",
@@ -171,6 +228,25 @@
     "source_url": "https://northwestern.joinhandshake.com/edu/events/2004487"
   },
   {
+    "title": "NCA Career Catch-Up: Internship/Job Search Resources",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "620 Lincoln Street, Garden level",
+    "date": "2026-10-09",
+    "month": "OCT",
+    "day": "09",
+    "time": "4:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999490"
+  },
+  {
     "title": "NCA: Georgetown Law School Info Session (Virtual)",
     "host": "Northwestern Career Advancement",
     "sector": "Speaker Series",
@@ -207,6 +283,25 @@
       "Student"
     ],
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1999495"
+  },
+  {
+    "title": "NCA Career Catch-Up: Understanding Recruitment Timelines",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Evanston",
+    "venue": "620 Lincoln Street, Garden level",
+    "date": "2026-10-02",
+    "month": "OCT",
+    "day": "02",
+    "time": "4:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/1999477"
   },
   {
     "title": "NCA: NYU Law School Information Session",
@@ -386,7 +481,7 @@
     "industry": "Advertising",
     "level": "Young Professional",
     "loc": "Evanston",
-    "venue": "Norris University Center, Evans Room",
+    "venue": "Annie May Swift Hall, Auditorium",
     "date": "2026-09-08",
     "month": "SEP",
     "day": "08",
