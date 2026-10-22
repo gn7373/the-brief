@@ -1,5 +1,24 @@
 [
   {
+    "title": "NCA: For Master\u2019s Students -LinkedIn: Building Your Brand",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-11-04",
+    "month": "NOV",
+    "day": "04",
+    "time": "12:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Graduate Students"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2036090"
+  },
+  {
     "title": "NCA Career Catch-Up: Understanding Your Skills",
     "host": "Northwestern Career Advancement",
     "sector": "Speaker Series",
@@ -17,6 +36,25 @@
       "Student"
     ],
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1999544"
+  },
+  {
+    "title": "NCA: Disclosing a Disability to Employers",
+    "host": "Northwestern Career Advancement",
+    "sector": "Speaker Series",
+    "industry": "Advertising",
+    "level": "Early Talent",
+    "loc": "Online",
+    "venue": "Online",
+    "date": "2026-10-28",
+    "month": "OCT",
+    "day": "28",
+    "time": "12:00 PM",
+    "free": true,
+    "price": null,
+    "tags": [
+      "Student"
+    ],
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2044132"
   },
   {
     "title": "NCA Career Catch-Up: Understanding Your Skills",
@@ -95,22 +133,22 @@
     "source_url": "https://northwestern.joinhandshake.com/edu/events/1984791"
   },
   {
-    "title": "NCA: University of Virginia Law School Information Session",
+    "title": "NCA: Yale Law School Info Session",
     "host": "Northwestern Career Advancement",
     "sector": "Speaker Series",
     "industry": "Advertising",
     "level": "Early Talent",
     "loc": "Evanston",
-    "venue": "Norris University Center",
-    "date": "2026-10-21",
+    "venue": "Norris University Center, Armadillo Room",
+    "date": "2026-10-22",
     "month": "OCT",
-    "day": "21",
-    "time": "5:00 PM",
+    "day": "22",
+    "time": "12:00 PM",
     "free": true,
     "price": null,
     "tags": [
       "Student"
     ],
-    "source_url": "https://northwestern.joinhandshake.com/edu/events/2009422"
+    "source_url": "https://northwestern.joinhandshake.com/edu/events/2024941"
   }
 ]
